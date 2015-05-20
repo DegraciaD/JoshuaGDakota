@@ -23,7 +23,7 @@ game.mainmenu = me.ScreenObject.extend({
                     newGame: function(){
                        me.input.releasePointerEvent('pointerdown', this);
                        me.input.releasePointerEvent('pointerdown', game.data.option2);
-                       me.state.change(me.state.PLAY);
+                       me.state.change(me.state.NEW);
                     }
                     
                  })));
@@ -32,7 +32,7 @@ game.mainmenu = me.ScreenObject.extend({
                  
                    game.data.option2 = (new(me.Renderable.extend({
                    init: function(){
-                       this._super(me.Renderable, 'init', [380, 340, 250, 50]); 
+                       this._super(me.Renderable, 'init', [380, 340, 300, 50]); 
                        this.font = new me.Font("Lucida Handwriting", 46, "orange");
                        me.input.registerPointerEvent('pointerdown', this, this.newGame.bind(this), true);
                    },

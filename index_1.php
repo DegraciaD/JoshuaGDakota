@@ -4,7 +4,7 @@ require_once( "php/controller/create-db.php");
 ?>
 <html>
     <head>
-        <title>melonJS Template</title>
+        <title>Mario Kart</title>
         <link rel="stylesheet" type="text/css" media="screen" href="index.css">
         <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -24,13 +24,15 @@ require_once( "php/controller/create-db.php");
         <div id="screen"></div>
 
        
-               <form id="input" method="post">
-            <div class="field">            
-             
-            </div>
+        <form id="input" method="post">
+            
                 
             
             <button type='button' id ='mainmenu'>Main Menu</button>
+            <button type='button' id ='player1'>Player 1</button>
+            <button type='button' id ='player2'>Player 2</button>
+            <button type='button' id ='player3'>Player 3</button>
+            <button type='button' id ='player4'>Player 4</button>
         
                <!-- melonJS Library -->
         <!-- build:js js/app.min.js -->
@@ -44,11 +46,14 @@ require_once( "php/controller/create-db.php");
         <script type="text/javascript" src="js/game.js"></script>
         <script type="text/javascript" src="js/resources.js"></script>
 	<script type="text/javascript" src="js/HUD.js"></script>
+        <script type="text/javascript" src="js/entities.js"></script>
 
 		<script type="text/javascript" src="js/screens/main menu.js"></script>
 		<script type="text/javascript" src="js/screens/play.js"></script>
                 <script type="text/javascript" src="js/screens/loadscreen.js"></script>
                 <script type="text/javascript" src="js/screens/character selection screen.js"></script>
+                <script type="text/javascript" src="js/screens/kartscreen.js"></script>
+              
 		<!-- /build -->
                  <!-- Bootstrap & Mobile optimization tricks -->
         <script type="text/javascript">
@@ -77,6 +82,22 @@ require_once( "php/controller/create-db.php");
             
                 $("#mainmenu").bind("click", function(){
                     me.state.change(me.state.MENU);
+                    });
+                    
+                     $("#player 1").bind("click", function(){
+                    me.state.change(me.state.PLAY);
+                    });
+                    
+                     $("#player 2").bind("click", function(){
+                    me.state.change(me.state.PLAY);
+                    });
+                    
+                     $("#player 3").bind("click", function(){
+                    me.state.change(me.state.PLAY);
+                    });
+                    
+                     $("#player 4").bind("click", function(){
+                    me.state.change(me.state.PLAY);
                     });
                     
                     

@@ -5,7 +5,10 @@ var game = {
     data: {
 // score
         score: 0,
-        character: ""
+        character: "",
+        option1: "",
+        option2: "",
+        kart: ""
        
     },
     // Run on page load.
@@ -24,7 +27,8 @@ var game = {
         }
   
        
-
+       me.state.LOAD = 112;
+       me.state.NEW = 113;
 
         // Initialize the audio.
         me.audio.init("mp3,ogg");
@@ -45,7 +49,8 @@ var game = {
         me.state.set(me.state.MENU, new game.mainmenu());
         me.state.set(me.state.PLAY, new game.PlayScreen());
         me.state.set(me.state.LOAD, new game.loadscreen());
-        me.state.set(me.state.CHARSELECT, new game.CharSelect());     
+        me.state.set(me.state.NEW, new game.CharSelect());     
+        me.state.set(me.state.KARTSCREEN, new game.Kartscreen());     
        
         // Start the game.
         me.state.change(me.state.MENU);

@@ -1,12 +1,15 @@
-game.CharSelect = me.ScreenObject.extend({
+game.Kartscreen = me.ScreenObject.extend({
 	/**	
 	 *  action to perform on state change
 	 */
 	onResetEvent: function() {	
-            me.game.world.addChild(new me.Sprite(0, 0,me.loader.getImage('char_select')), -10);
+            me.game.world.addChild(new me.Sprite(0, 0,me.loader.getImage('kartscreen')), -10);
             
             document.getElementById("input").style.visibility = "visible";
-          
+            document.getElementById("input").style.visibility = "visible";
+            document.getElementById("input").style.visibility = "visible";
+            document.getElementById("input").style.visibility = "visible";
+            document.getElementById("input").style.visibility = "visible";
           
             me.game.world.addChild( new (me.Renderable.extend ({
                         init: function(){
@@ -16,17 +19,17 @@ game.CharSelect = me.ScreenObject.extend({
                         },
 
                         draw: function(renderer){    
-                            this.font.draw(renderer.getContext(),"PRESS F1-F7 TO CHOOSE YOUR CHRACTER", 10, 10);
+                            this.font.draw(renderer.getContext(),"PRESS F1-F7 TO CHOOSE YOUR KART", 10, 10);
                         }
 
                     }))); 
-                me.game.world.addChild(new me.Sprite (.100, 250, me.loader.getImage('mario')));
-                me.game.world.addChild(new me.Sprite (131, 250, me.loader.getImage('peach')));
-                me.game.world.addChild(new me.Sprite (274, 250, me.loader.getImage('toad')));
-                me.game.world.addChild(new me.Sprite (448, 250, me.loader.getImage('baby mario')));
-                me.game.world.addChild(new me.Sprite (615, 250, me.loader.getImage('yoshi')));
-                me.game.world.addChild(new me.Sprite (769, 250, me.loader.getImage('luigi')));
-                me.game.world.addChild(new me.Sprite (900, 250, me.loader.getImage('bowser')));
+                me.game.world.addChild(new me.Sprite (1, 250, me.loader.getImage('yoshi kart')));
+                me.game.world.addChild(new me.Sprite (147, 250, me.loader.getImage('bowser kart')));
+                me.game.world.addChild(new me.Sprite (268, 250, me.loader.getImage('peach kart')));
+                me.game.world.addChild(new me.Sprite (392, 250, me.loader.getImage('mario kart')));
+                me.game.world.addChild(new me.Sprite (582, 250, me.loader.getImage('baby mario kart')));
+                me.game.world.addChild(new me.Sprite (726, 250, me.loader.getImage('toad kart')));
+                me.game.world.addChild(new me.Sprite (885, 250, me.loader.getImage('luigi kart')));
                
               
 
@@ -40,32 +43,32 @@ game.CharSelect = me.ScreenObject.extend({
 
                 this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
                 if (action === "F1") {
-                    game.data.character = 1;
-                    me.state.change(me.state.KARTSCREEN);
+                    game.data.kart = 1;
+                    me.state.change(me.state.PLAY);
                 }
                 else if(action === "F2"){
-                    game.data.character = 2;
-                    me.state.change(me.state.KARTSCREEN);
+                    game.data.kart = 2;
+                    me.state.change(me.state.PLAY);
                 }
                 else if(action === "F3"){
-                    game.data.character = 3;
-                    me.state.change(me.state.KARTSCREEN);
+                    game.data.kart = 3;
+                    me.state.change(me.state.PLAY);
                 }  
                 else if(action === "F4"){
-                    game.data.character = 4;
-                    me.state.change(me.state.KARTSCREEN);
+                    game.data.kart = 4;
+                    me.state.change(me.state.PLAY);
                 }  
                 else if(action === "F5"){
-                    game.data.character = 5;
-                    me.state.change(me.state.KARTSCREEN);
+                    game.data.kart = 5;
+                    me.state.change(me.state.PLAY);
                 }  
                 else if(action === "F6"){
-                    game.data.character = 5;
-                    me.state.change(me.state.KARTSCREEN);
+                    game.data.kart = 5;
+                    me.state.change(me.state.PLAY);
                 }  
                 else if(action === "F7"){
-                    game.data.character = 7;
-                    me.state.change(me.state.KARTSCREEN);
+                    game.data.kart = 7;
+                    me.state.change(me.state.PLAY);
                 }  
                 });
            
@@ -89,10 +92,10 @@ game.CharSelect = me.ScreenObject.extend({
                 me.event.unsubscribe(this.handler);
                 
                  document.getElementById("input").style.visibility = "hidden";
-                 document.getElementById("input").style.visibility = "hidden";
-                 document.getElementById("input").style.visibility = "hidden";
-                 document.getElementById("input").style.visibility = "hidden";
-                 document.getElementById("input").style.visibility = "hidden";
+                
+                    
 	}
 });
+
+
 
